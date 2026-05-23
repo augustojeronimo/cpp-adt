@@ -65,7 +65,7 @@ void start_test()
     // The values ​​below are exclusive to the automation algorithm
     // They only simulate the input
     const int size_insert = 10;
-    int insert_values[10][2] = {
+    int values_to_insert[10][2] = {
         {1, 10},
         {2, 20},
         {3, 30},
@@ -79,15 +79,17 @@ void start_test()
     };
 
     const int size_remove = 4;
-    int remove_positions[4] = {
+    int positions_to_remove[4] = {
         1, 4,5, 10
     };
 
     const int size_get = 4;
-    int get_positions[size_get] = {
+    int positions_to_get[size_get] = {
         2, 3,5, 11
     };
 
+
+    // Start of tests
 
     Sequence_ADT sequence;
     
@@ -106,7 +108,7 @@ void start_test()
 
     print(sequence);
 
-    for (int i = 0; i < size_insert; i++) insert(sequence, insert_values[i][0], insert_values[i][1]);
+    for (int i = 0; i < size_insert; i++) insert(sequence, values_to_insert[i][0], values_to_insert[i][1]);
 
     color::red();
     std::cout << "---------------------" << std::endl;
@@ -117,7 +119,7 @@ void start_test()
 
     print(sequence);
 
-    for (int i = 0; i < size_remove; i++) remove(sequence, remove_positions[i]);
+    for (int i = 0; i < size_remove; i++) remove(sequence, positions_to_remove[i]);
     
     color::yelow();
     std::cout << "-----------------" << std::endl;
@@ -128,7 +130,7 @@ void start_test()
 
     print(sequence);
 
-    for (int i = 0; i < size_get; i++) get(sequence, get_positions[i]);
+    for (int i = 0; i < size_get; i++) get(sequence, positions_to_get[i]);
 
     color::blue();
     std::cout << "------------------------" << std::endl;
