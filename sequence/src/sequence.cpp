@@ -1,9 +1,9 @@
-#include "../includes/sequence_adt.h"
+#include "../includes/sequence.h"
 
 
-Sequence_ADT::Sequence_ADT() : index(nullptr), size(0) {}
+Sequence::Sequence() : index(nullptr), size(0) {}
 
-Sequence_ADT::~Sequence_ADT()
+Sequence::~Sequence()
 {
     Node* current = index;
 
@@ -18,7 +18,7 @@ Sequence_ADT::~Sequence_ADT()
 }
 
 
-bool Sequence_ADT::insert(int pos, int elem)
+bool Sequence::insert(int pos, int elem)
 {
     if (pos < 1 || pos > (size + 1)) return false;
 
@@ -37,7 +37,7 @@ bool Sequence_ADT::insert(int pos, int elem)
     return true;
 }
 
-bool Sequence_ADT::remove(int pos)
+bool Sequence::remove(int pos)
 {
     if (pos < 1 || pos > size) return false;
 
@@ -61,7 +61,7 @@ bool Sequence_ADT::remove(int pos)
     return true;
 }
 
-std::optional<int> Sequence_ADT::get(int pos)
+std::optional<int> Sequence::get(int pos) const
 {
     if (pos < 1 || pos > size) return std::nullopt;
 
@@ -71,13 +71,13 @@ std::optional<int> Sequence_ADT::get(int pos)
     return current->value;
 }
 
-void Sequence_ADT::print()
+void Sequence::print() const
 {
     std::cout << "Sequence:" << std::endl;
     std::cout << *this << std::endl;
 }
 
-std::ostream& operator<<(std::ostream& os, Sequence_ADT& seq)
+std::ostream& operator<<(std::ostream& os, const Sequence& seq)
 {
     os << "[";
     if (seq.size > 0) {
