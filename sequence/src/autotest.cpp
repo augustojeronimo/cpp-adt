@@ -87,7 +87,7 @@ void start_test()
     // The values ​​below are exclusive to the automation algorithm
     // They only simulate the input
     const int size_insert = 10;
-    int values_to_insert[10][2] = {
+    int values_to_insert[size_insert][2] = {
         {1, 10},
         {2, 20},
         {3, 30},
