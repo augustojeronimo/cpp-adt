@@ -110,7 +110,7 @@ bool Set::remove(int elem)
         }
     }
 
-    return true;
+    return false;
 }
 
 bool Set::contains(int elem) const
